@@ -34,7 +34,7 @@ extension ToDoTableViewController {
         cell.textLabel?.text = todo.title
         cell.detailTextLabel?.text = "\(ToDo.dueDateFormatter.string(from: todo.dueDate))"
         
-        
+        // отображать завершенные дела
         
         return cell
     }

@@ -53,6 +53,25 @@ class ToDoViewController: UITableViewController {
         saveButton.isEnabled = !text.isEmpty
     }
     
+    
+    
+    // MARK: - ... Navigation
+    // переход
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(#function, segue.identifier!, "====+++++")
+         //  на первый экран по segue Save
+        
+        super.prepare(for: segue, sender: sender) // вызов радителя
+        guard segue.identifier == "SaveSegue" else { return }
+        let title = titleTextField.text ?? ""
+        let isComplete = isCompleteButton.isSelected
+        let dueDate = dueDatePicker.date
+        let notes = notesTextView.text
+        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate,note: notes)
+        
+    }
+    
+    
     // MARK: - ... @IBAction
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         updateDueDateLabel(date: dueDatePicker.date)
@@ -148,14 +167,7 @@ class ToDoViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }

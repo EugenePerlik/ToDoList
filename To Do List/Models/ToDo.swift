@@ -20,7 +20,7 @@ struct ToDo {
         
         formatter.dateStyle = .short
         formatter.timeStyle = .short
-        formatter.dateFormat = " dd LLL yy cccccc  HH:mm "
+        formatter.dateFormat = " cccccc. dd LLL/yy  HH:mm "
         formatter.locale = Locale(identifier: "ru_RU") // русифецируем
         return formatter
     }()

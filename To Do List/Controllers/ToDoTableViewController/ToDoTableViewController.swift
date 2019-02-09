@@ -24,18 +24,21 @@ class ToDoTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
-     // MARK: - ... Navigation
-    // переход
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     //   <#code#>
-    }
     
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
-    // возврат на первый экран по segue
+        // пришли  на первый экран по segue Save
         guard segue.identifier == "SaveSegue" else { return }
+        //       ToDoViewController         источник
+        guard let toDoViewController = segue.source as? ToDoViewController else { return }
         
+        // проверяем пришли данные todo
+        guard let todo = toDoViewController.todo else { return }
         
+        let indexPath = IndexPath(row: todos.count, section: 0)
+        // добавляем одну ячейку и обновляем  todo
+        todos.append(todo)
+        tableView.insertRows(at: [indexPath], with: .automatic)
         
     }
 
