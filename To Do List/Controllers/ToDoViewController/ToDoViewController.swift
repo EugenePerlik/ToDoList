@@ -52,18 +52,20 @@ class ToDoViewController: UITableViewController {
         // скрываем SAVE
         saveButton.isEnabled = !text.isEmpty
     }
-
-    
     
     // MARK: - ... @IBAction
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         updateDueDateLabel(date: dueDatePicker.date)
+        // скрываем клавиатуру
+        view.endEditing(true)
     }
     
     @IBAction func isCompleteButtonPressed(_ sender: UIButton) {
         // иконку на противоположную
         isCompleteButton.isSelected.toggle()
         isPickerHidden = true
+        // скрываем клавиатуру
+        view.endEditing(true)
     }
     
     @IBAction func returnPressed(_ sender: UITextField) {
@@ -79,7 +81,6 @@ class ToDoViewController: UITableViewController {
         isPickerHidden = true
     
     }
-    
     
     
     

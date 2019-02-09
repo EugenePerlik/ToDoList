@@ -32,7 +32,9 @@ extension ToDoTableViewController {
         
         let todo = todos[indexPath.row]
         cell.textLabel?.text = todo.title
-        cell.detailTextLabel?.text = "\(todo.dueDate)"
+        cell.detailTextLabel?.text = "\(ToDo.dueDateFormatter.string(from: todo.dueDate))"
+        
+        
         
         return cell
     }
