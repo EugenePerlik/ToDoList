@@ -5,10 +5,12 @@
 //  Created by  Apple24 on 09/02/2019.
 //  Copyright © 2019  Apple24. All rights reserved.
 //
-
+import Realm
 import RealmSwift
+import Foundation
 
-class ToDoList: Object {
+
+class ToDo: Object {
     @objc dynamic var title = ""          // заголовок
     @objc dynamic var isComplete = false  // завершено  или нет
     @objc dynamic var dueDate = Date()    // дата
@@ -17,15 +19,58 @@ class ToDoList: Object {
     // Получить область по умолчанию
     static let realm = try! Realm()
     
+    
+    
+    init(title: String, isComplete: Bool, dueDate: Date, note: String) {
+        self.title = title
+        self.isComplete = isComplete
+        self.dueDate = dueDate
+        self.note = note
+        super.init()
+    }
     required init() {
         super.init()
     }
     
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
+    //    fatalError("init(realm:schema:) has not been implemented")
+       
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+     //   fatalError("init(value:schema:) has not been implemented")
+    }
+    
+    // загружать из внешнего
+    static func loadToDos() -> [ToDo]? {
+        var todos = [ToDo]()
+        let todoObjects = realm.objects(ToDo.self)
+        print(#function, todoObjects.count)
+        for todo in todoObjects {
+            todos.append(todo)
+        }
+        return todos
+    }
+    
 
+    // загружать из внутреннего
+    static func defaultToDos() -> [ToDo] {
+        return []  //defaultToDos()
+    }
     
     
-
-    
+    // вид datePicker
+    static let dueDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        formatter.dateFormat = " cccccc. dd LLL/yy  HH:mm "
+        formatter.locale = Locale(identifier: "ru_RU") // русифецируем
+        return formatter
+    }()
 
 }
 

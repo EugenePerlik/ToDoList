@@ -18,6 +18,10 @@ extension ToDoTableViewController {
         
         switch editingStyle {
         case .delete:
+            // удаляем из Realm
+            try! ToDo.realm.write {
+                ToDo.realm.delete(todos[indexPath.row])
+            }
             todos.remove(at: indexPath.row) // Удалить строку из источника данных
             tableView.deleteRows(at: [indexPath], with: .fade)
         

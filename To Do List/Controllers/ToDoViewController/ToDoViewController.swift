@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ToDoViewController: UITableViewController {
     
@@ -67,7 +68,7 @@ class ToDoViewController: UITableViewController {
         let isComplete = isCompleteButton.isSelected
         let dueDate = dueDatePicker.date
         let notes = notesTextView.text
-        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate,note: notes)
+        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate,note: notes!) //
         
     }
     

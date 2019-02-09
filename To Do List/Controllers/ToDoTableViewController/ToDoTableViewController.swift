@@ -7,18 +7,41 @@
 // ToDoTableViewController+UITableViewDataSource
 
 import UIKit
+import RealmSwift
 
 class ToDoTableViewController: UITableViewController {
     
     // MARK: - ... Stored Propertis
-    var todos = [ToDo]()   // связь ViewController с моделью
+    var todos = [ToDo]() { // связь ViewController с моделью
+        didSet {
+            // Сохранение данных в Realm
+            try! ToDo.realm.write {
+                ToDo.realm.add(todos)
+            }
+        }
+    }
+    
+    
+    
+   // var todos = [ToDo]()
     
      // MARK: - ... UITableViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // подгружаем данные с внутреннего и с веншнего
-        todos = ToDo.loadToDos()
+     //   todos = ToDo.loadToDos()
+        
+        if let savedToDos = ToDo.loadToDos() {
+            todos = savedToDos
+        } else {
+            print("=========== нет данных ========")
+            todos = ToDo.defaultToDos()
+        }
+        
+        
+        
+        
         
         // отобразить кнопку Изменить на панели навигации
         navigationItem.leftBarButtonItem = editButtonItem

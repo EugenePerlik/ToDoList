@@ -22,6 +22,19 @@
 		BF73376E08B6E3CA1D7B5AA9 /* Pods_To_Do_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039D0017556C71B1754A98C6 /* Pods_To_Do_List.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A72A6777220F501900DA54FC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		039D0017556C71B1754A98C6 /* Pods_To_Do_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_To_Do_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFCF76FC131FA69087791CC /* Pods-To Do List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-To Do List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-To Do List/Pods-To Do List.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +174,7 @@
 				A73A3CB1220C7EFA00C963E3 /* Frameworks */,
 				A73A3CB2220C7EFA00C963E3 /* Resources */,
 				C59AAA5923B514D14C334EA5 /* [CP] Embed Pods Frameworks */,
+				A72A6777220F501900DA54FC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
