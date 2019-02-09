@@ -14,18 +14,18 @@ class ToDo: Object {
     @objc dynamic var title = ""          // заголовок
     @objc dynamic var isComplete = false  // завершено  или нет
     @objc dynamic var dueDate = Date()    // дата
-    @objc dynamic var note = ""          // заметки
+    @objc dynamic var notes: String? = nil        // заметки
     
     // Получить область по умолчанию
     static let realm = try! Realm()
     
     
     
-    init(title: String, isComplete: Bool, dueDate: Date, note: String) {
+    init(title: String, isComplete: Bool, dueDate: Date, notes: String?) {
         self.title = title
         self.isComplete = isComplete
         self.dueDate = dueDate
-        self.note = note
+        self.notes = notes
         super.init()
     }
     required init() {
