@@ -40,14 +40,46 @@ class ToDoTableViewController: UITableViewController {
         }
         
         
-        
-        
-        
         // отобразить кнопку Изменить на панели навигации
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
     
+    
+    
+    
+    // MARK: - Navigation
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print(#function, segue.identifier!, "====+++++")
+        //  на второй экран по segue Save
+        
+        super.prepare(for: segue, sender: sender) // вызов радителя
+        guard segue.identifier == "EditToDoCell" else { return }
+
+   //     var destinationToDoViewController = segue.destination as! ToDoViewController
+        
+       // destinationToDoViewController = 
+        
+        
+        
+        // print(todos)
+        
+    
+       
+//        let isComplete = isCompleteButton.isSelected
+//        let dueDate = dueDatePicker.date
+//        let notes = notesTextView.text
+//        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+//ToDo
+       
+  //     print("==",title, "==" )
+  //      let todo = todos[indexPath.row]
+  //      cell.textLabel?.text = todo.title
+    }
+
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
         // пришли  на первый экран по segue Save

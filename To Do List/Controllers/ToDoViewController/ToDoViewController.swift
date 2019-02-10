@@ -67,7 +67,7 @@ class ToDoViewController: UITableViewController {
         let isComplete = isCompleteButton.isSelected
         let dueDate = dueDatePicker.date
         let notes = notesTextView.text
-        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate, notes: notes) //
+        todo = ToDo(title:title, isComplete: isComplete, dueDate: dueDate, notes: notes) 
         
     }
     

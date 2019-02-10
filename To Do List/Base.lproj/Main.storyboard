@@ -41,6 +41,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3Fe-Do-Jtn" kind="show" identifier="EditToDoCell" id="zWU-at-mrn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,12 +55,12 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="2wD-hO-IDD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oie-4G-5Mv">
                             <connections>
-                                <segue destination="3Fe-Do-Jtn" kind="presentation" id="8Qm-tZ-3PT"/>
+                                <segue destination="3Fe-Do-Jtn" kind="presentation" identifier="SaveSegue" id="8Qm-tZ-3PT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="3Fe-Do-Jtn" kind="show" identifier="EditToDo" id="ELk-j9-dOk"/>
+                        <segue destination="3Fe-Do-Jtn" kind="show" identifier="EditToDo" id="FJK-J9-ZkY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gc9-gx-8HB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,7 +253,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tub-Nl-jY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="-161"/>
+            <point key="canvasLocation" x="1178" y="-161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Ht-oH-scx">
@@ -274,6 +277,6 @@
         <image name="Unchecked" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qm-tZ-3PT"/>
+        <segue reference="FJK-J9-ZkY"/>
     </inferredMetricsTieBreakers>
 </document>
