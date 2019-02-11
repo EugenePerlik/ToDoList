@@ -41,9 +41,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="3Fe-Do-Jtn" kind="show" identifier="EditToDoCell" id="zWU-at-mrn"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="409" y="-161"/>
         </scene>
-        <!--Новое To Do-->
+        <!--Новое-->
         <scene sceneID="wMN-lj-498">
             <objects>
                 <tableViewController id="RUW-lH-ckY" customClass="ToDoViewController" customModule="To_Do_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,7 +210,7 @@
                             <outlet property="delegate" destination="RUW-lH-ckY" id="Wiz-UE-UhI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новое To Do" id="xYg-b4-WHv">
+                    <navigationItem key="navigationItem" title="Новое" id="xYg-b4-WHv">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x7X-RO-CW2">
                             <connections>
                                 <segue destination="sta-Zf-ygO" kind="unwind" identifier="CancelSegue" unwindAction="unwindWithSegue:" id="2D7-DO-mGX"/>

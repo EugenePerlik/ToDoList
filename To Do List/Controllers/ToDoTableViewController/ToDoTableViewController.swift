@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Realm
 
 class ToDoTableViewController: UITableViewController {
     
@@ -56,8 +57,8 @@ class ToDoTableViewController: UITableViewController {
         print(#function, segue.identifier!, "====+++++")
         //  на второй экран по segue Save
         
-        super.prepare(for: segue, sender: sender) // вызов радителя
-        guard segue.identifier == "EditToDoCell" else { return }
+ //       super.prepare(for: segue, sender: sender) // вызов радителя
+ //       guard segue.identifier == "EditToDoCell" else { return }
 
    //     var destinationToDoViewController = segue.destination as! ToDoViewController
         
