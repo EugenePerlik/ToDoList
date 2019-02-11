@@ -5,7 +5,7 @@
 //  Created by  Apple24 on 09/02/2019.
 //  Copyright © 2019  Apple24. All rights reserved.
 //
-// 11.02.2019 Realm
+// 11.02.2019 Realm promo
 
 import Realm
 import RealmSwift
