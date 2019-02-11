@@ -5,21 +5,20 @@
 //  Created by  Apple24 on 09/02/2019.
 //  Copyright © 2019  Apple24. All rights reserved.
 //
+// 11.02.2019 Realm
+
 import Realm
 import RealmSwift
 import Foundation
 
-
 class ToDo: Object {
-    @objc dynamic var title = ""          // заголовок
-    @objc dynamic var isComplete = false  // завершено  или нет
-    @objc dynamic var dueDate = Date()    // дата
-    @objc dynamic var notes: String? = nil        // заметки
+    @objc dynamic var title = ""             // заголовок
+    @objc dynamic var isComplete = false     // завершено или нет
+    @objc dynamic var dueDate = Date()       // дата
+    @objc dynamic var notes: String? = nil   // заметки
     
     // Получить область по умолчанию
     static let realm = try! Realm()
-    
-    
     
     init(title: String, isComplete: Bool, dueDate: Date, notes: String?) {
         self.title = title
@@ -34,8 +33,6 @@ class ToDo: Object {
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
-    //    fatalError("init(realm:schema:) has not been implemented")
-       
     }
     
     required init(value: Any, schema: RLMSchema) {
@@ -47,20 +44,16 @@ class ToDo: Object {
     static func loadToDos() -> [ToDo]? {
         var todos = [ToDo]()
         let todoObjects = realm.objects(ToDo.self)
-        print(#function, todoObjects.count)
+        //print(#function, todoObjects.count)
         for todo in todoObjects {
             todos.append(todo)
         }
         return todos
     }
-    
-
     // загружать из внутреннего
     static func defaultToDos() -> [ToDo] {
-        return []  //defaultToDos()
+        return []
     }
-    
-    
     // вид datePicker
     static let dueDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -71,7 +64,6 @@ class ToDo: Object {
         formatter.locale = Locale(identifier: "ru_RU") // русифецируем
         return formatter
     }()
-
 }
 
 

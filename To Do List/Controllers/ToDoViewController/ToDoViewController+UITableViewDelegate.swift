@@ -20,17 +20,11 @@ extension ToDoViewController {
         case IndexPath(row: 1, section: 1):
             return isPickerHidden ? 0 : largeHeight
         case IndexPath(row: 0, section: 2):
-        //     высоту подогнать под контент
-        //     tableView.estimatedRowHeight = largeHeight
-        //     tableView.rowHeight = UITableView.automaticDimension
-        //     print("\( " row=",indexPath.row ,"sel-",  indexPath.section ) d")
-        //     notesTextView.contentSize.height
             return largeHeight/2
         default:
             return normalHeight
         }
     }
-    
     // Объект представления таблицы, информирующий делегата о новом выборе строки.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
@@ -45,9 +39,4 @@ extension ToDoViewController {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
-    
-    
-    
-    
-    
 }

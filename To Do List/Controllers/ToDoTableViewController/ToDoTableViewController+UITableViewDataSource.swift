@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
 extension ToDoTableViewController {
-    
     
     // MARK: - Table view data source Источник данных
     //Возвращает количество секций в табличном представлении.
@@ -29,20 +27,17 @@ extension ToDoTableViewController {
             print(" == Ошибка в \(#file.name) в \(#function) на строке \(#line): переход ToDoCell ")
             fatalError()
         }
-        
         let todo = todos[indexPath.row]
         cell.textLabel?.text = todo.title
         cell.detailTextLabel?.text = "\(ToDo.dueDateFormatter.string(from: todo.dueDate))"
         // отображать завершенные дела
         cell.accessoryType = todo.isComplete ? .checkmark : .none
-        
-        
         return cell
     }
     
     // для условного редактирования представления таблицы.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Возвращает false, если не требуется, чтобы указанный элемент !!! был доступен для редактирования. (удалять)
+        // Возвращает false, чтобы указанный элемент !!! был доступен для редактирования. (кнопка удалять)
         return true
     }
 }
